@@ -26,14 +26,12 @@ INSTALLED_APPS = [
 ]
 
 # 3rd party
-
 INSTALLED_APPS += [
     'rest_framework',
     'django_filters',
 ]
 
 # project applications
-
 INSTALLED_APPS += [
     'users',
     'reservation',
@@ -107,6 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+    {
+        'NAME': 'core.password_validation.UpperCaseValidatior',
+    },
+    {
+        'NAME': 'core.password_validation.LowerCaseValidation',
+    },
+
 ]
 
 
