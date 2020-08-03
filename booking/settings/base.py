@@ -1,5 +1,6 @@
 import os
 from datetime import timedelta
+from django.utils.translation import ugettext_lazy as ugettext
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,6 +18,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,6 +57,7 @@ INSTALLED_APPS += [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -138,6 +141,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# django model translation settings
+
+LANGUAGES = (
+    ('ar', ugettext('Arabic')),
+    ('en', ugettext('English')),
+)
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 # Phone Number Settings
 PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
