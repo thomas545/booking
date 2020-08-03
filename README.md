@@ -67,7 +67,7 @@ then: `python manage.py migrate`
 ### API Endpoints
 ##### Register
 Method: `POST`  
-Endpoint: `/registration/`  
+Endpoint: `users/registration/`  
 Payload:  
 `{  
     "username": "USERNAME",  
@@ -77,7 +77,7 @@ Payload:
 }`
 ##### Login
 Method: `POST`  
-Endpoint: `/login/`  
+Endpoint: `users/login/`  
 Payload:  
 `{  
     "username": "USERNAME",  
@@ -86,7 +86,7 @@ Payload:
 
 ##### Logout
 Method: `POST`  
-Endpoint: `/logout/`  
+Endpoint: `users/logout/`  
 Headers: `Authorization: JWT YOUR_TOKEN_HERE`  
 
 
