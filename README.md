@@ -5,7 +5,6 @@
 1. [Django](https://docs.djangoproject.com/en/2.0/releases/2.0/)
 2. [Django Rest Framework](https://www.django-rest-framework.org/)
 3. [API Translation](https://pypi.org/project/googletrans/)
-4. [Upload Package to Pypi](https://upload.pypi.org/legacy/)
 
 
 ### Installation:
@@ -68,7 +67,7 @@ then: `python manage.py migrate`
 ### API Endpoints
 ##### Register
 Method: `POST`  
-Endpoint: `/registration/`  
+Endpoint: `registration/`  
 Payload:  
 `{  
     "username": "USERNAME",  
@@ -78,7 +77,7 @@ Payload:
 }`
 ##### Login
 Method: `POST`  
-Endpoint: `/login/`  
+Endpoint: `login/`  
 Payload:  
 `{  
     "username": "USERNAME",  
@@ -87,7 +86,7 @@ Payload:
 
 ##### Logout
 Method: `POST`  
-Endpoint: `/logout/`  
+Endpoint: `logout/`  
 Headers: `Authorization: JWT YOUR_TOKEN_HERE`  
 
 
