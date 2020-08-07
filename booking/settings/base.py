@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'modeltranslation',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -193,3 +194,4 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # REST_AUTH_SERIALIZERS = {
 #     'LOGIN_SERIALIZER': 'path.to.custom.LoginSerializer',
 # }
+

@@ -36,6 +36,9 @@ class Profile(UUIDModel):
     )
     birth_date = models.DateTimeField(blank=True, null=True)
 
+    def __str__(self):
+        return self.user.username
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, *args, **kwargs):
@@ -50,6 +53,9 @@ class Address(UUIDModel, TimeStampedModel):
     city = models.CharField(max_length=100)
     apartment = models.IntegerField(blank=True, null=True)
     building_number = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username + " - " + self.city
 
 
 class Feedback(UUIDModel, TimeStampedModel):
