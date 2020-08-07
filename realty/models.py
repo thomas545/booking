@@ -32,7 +32,7 @@ class Category(UUIDModel, TimeStampedModel):
 
 class Realty(UUIDModel, TimeStampedModel):
     realtor = models.ForeignKey(User, related_name="realty", on_delete=models.CASCADE)
-    title = models.CharField(max_length=250)
+    name = models.CharField(max_length=250)
     description = models.TextField(blank=True)
     street = models.CharField(max_length=100)
     country = CountryField(blank=True)
