@@ -15,6 +15,7 @@ Django==3.1
 django-allauth==0.42.0
 django-countries==6.1.2
 django-filter==2.3.0
+django-grappelli==2.14.2
 django-modeltranslation==0.15.1
 django-phonenumber-field==4.0.0
 djangorestframework==3.11.1
