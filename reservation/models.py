@@ -17,3 +17,4 @@ class Reservation(UUIDModel, TimeStampedModel):
     total_price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     check_in = models.DateTimeField(blank=True)
     check_out = models.DateTimeField(blank=True)
+
