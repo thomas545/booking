@@ -2,7 +2,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework import permissions, status, generics, views, filters
 from rest_framework.response import Response
 
-from .serializers import CategorySerilaizer
+from core.generics import BulkListCreateDestroyAPIView
+
+from .serializers import CategorySerilaizer, BulkCategoryCreateSerilaizer
 from .models import Category
 
 
@@ -21,3 +23,7 @@ class CategoryView(generics.ListAPIView):
         "created",
         "name",
     )
+
+class BulkCategoryView(BulkListCreateDestroyAPIView):
+    serializer_class = BulkCategoryCreateSerilaizer
+    queryset = Category.objects.all()

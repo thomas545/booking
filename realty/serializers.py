@@ -2,6 +2,8 @@ from django.utils.translation import ugettext_lazy as _u
 from rest_framework import serializers
 from .models import Category, Realty, RealtyImage, Room, RoomImage
 from core.writable_nested_serializer import WritableNestedModelSerializer
+from core.bulk_serilaizers import BulkListSerializer
+
 
 
 class CategoryChildrenSerilaizer(serializers.ModelSerializer):
@@ -110,3 +112,11 @@ class RealitySerializer(WritableNestedModelSerializer):
             "uuid",
         )
 
+
+class BulkCategoryCreateSerilaizer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = (
+            "name",
+            "description",
+        )
