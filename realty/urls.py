@@ -10,4 +10,5 @@ router.register("realty", viewsets.RealityViewSet, basename="realty")
 urlpatterns = [
     path("categories/", views.CategoryView.as_view(), name="categories"),
     path("bulk/categories/", views.BulkCategoryView.as_view(), name="bulk_categories"),
+    path("bulk/update/categories/", views.BulkUpdatecategory.as_view(), name="bulk_update_categories"),
 ]

@@ -2,7 +2,7 @@ from django.utils.translation import ugettext_lazy as _u
 from rest_framework import serializers
 from .models import Category, Realty, RealtyImage, Room, RoomImage
 from core.writable_nested_serializer import WritableNestedModelSerializer
-from core.bulk_serilaizers import BulkListSerializer
+from core.bulk_serilaizers import UpdateListSerializer
 
 
 
@@ -117,6 +117,9 @@ class BulkCategoryCreateSerilaizer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = (
+            "id",
             "name",
             "description",
         )
+        read_only_fields = ("id",)
+        list_serializer_class = UpdateListSerializer

@@ -74,3 +74,39 @@ class BulkListSerializer(ListSerializer):
             updated_objects.append(self.child.update(obj, obj_validated_data))
 
         return updated_objects
+
+
+class UpdateListSerializer(ListSerializer):
+    """
+    ?ids=56&ids=57&ids=58&ids=59
+
+    [
+        {
+            "name": "rrr",
+            "description": "rrr"
+        },
+        {
+            "name": "new 1",
+            "description": "new 1"
+        },
+        {
+            "name": "new 2",
+            "description": "new 2"
+        },
+        {
+            "name": "new 3",
+            "description": "new 3"
+        }
+    ]
+    """
+
+    def update(self, instances, validated_data):
+
+        instance_hash = {index: instance for index, instance in enumerate(instances)}
+
+        result = [
+            self.child.update(instance_hash[index], attrs)
+            for index, attrs in enumerate(validated_data)
+        ]
+
+        return result
