@@ -2,7 +2,7 @@ amqp==2.6.1
 appdirs==1.4.4
 asgiref==3.2.10
 attrs==19.3.0
-Babel==2.8.0
+Babel==2.9.1
 billiard==3.6.3.0
 black==19.10b0
 celery==4.4.7
